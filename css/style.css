@@ -1,0 +1,427 @@
+/******************************************
+/* SETUP
+/*******************************************/
+/* Box Model Hack */
+/* Shay Howe */
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*for grouping floating elements*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+a {
+  text-decoration: none;
+  color: #363636;
+}
+
+body {
+     color: #363636;
+     font-size: 16px;
+     line-height: 1.4;
+     font-family: serif;
+}
+
+h2,
+h3 {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 900;
+
+}
+
+h5 {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+em {
+  font-weight:700;
+}
+
+.article-highlights h2 {
+  font-size: 30px;
+}
+
+.top-article h3 {
+  font-weight: 700;
+  border-bottom: 2px solid rgba(150, 150, 150, .3);
+}
+
+
+
+header {
+  background-color: #white;
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+
+}
+
+.article *{
+  list-style-position: outside;
+  list-style-type: circle;
+}
+
+.article li {
+  margin-left: 20px;
+}
+
+.comment-count{
+  font-family: sans-serif;
+  color: lightblue;
+}
+
+.editorial {
+  font-weight: 700;
+
+}
+
+.icon {
+  width: 1rem;
+}
+
+.logo {
+  max-width: 30em;
+  margin: 1em 0;
+}
+
+.niche h5 {
+  font-family: serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.niche h6 {
+  font-family: sans-serif;
+  font-size: .8em;
+}
+
+.subtitle {
+  color: grey;
+  font-size: .75rem;
+}
+
+.time {
+  color: darkred;
+  font-family: sans-serif;
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+aside {
+  float: right;
+  width: 33%;
+  border-left: 1px solid rgba(150, 150, 150, .3);
+  padding-left: 10px;
+}
+img {
+  width: 100%;
+}
+
+.article-img img{
+  float: right;
+  width: 30%;
+}
+
+.article-img .group > section{
+  float:left;
+  width: 70%;
+}
+
+.article-highlights {
+  float: left;
+  width: 33%;
+}
+
+.editorial {
+  list-style-type: circle;
+  list-style-position: inside;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.left-articles .editorial li+li{
+  margin-top: 0;
+}
+
+
+.group > li + li {
+  padding-left: 20px;
+}
+
+.group > section + img {
+  padding-left: 10px;
+}
+
+.readable-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-container {
+  display: flex;
+}
+
+/*
+  contents spread apart
+*/
+.flex-spread {
+  justify-content: space-between;
+}
+
+.flex-vcenter {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.focus-articles {
+  float: right;
+  width: 66%;
+}
+
+.focus-articles h2 {
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.focus-articles .article li {
+  display: inline;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.focus-articles .article li + li {
+  border-left: 1px solid rgba(150, 150, 150,.3);
+  padding: 0 5px;
+}
+
+.focus-articles .first-article h2{
+
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.left-nav {
+  min-width: 20%;
+}
+
+.left-articles > ul > li + li,
+.right-articles > ul > li + li {
+  margin-top: 15px;
+}
+
+.main {
+  width: 66%;
+  margin-right: 0;
+  float: left;
+}
+
+.niche {
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid rgba(150, 150, 150,.3);
+}
+
+.niche > section {
+  float: left;
+  width: 50%;
+}
+
+.opinion-articles h3 {
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.left-articles {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+
+.live-feed {
+  padding-top: 10px;
+}
+
+.live-feed li {
+  border-bottom: 1px solid rgba(150, 150, 150, .3);
+  padding-bottom: 10px;
+}
+
+.live-feed .post-timer {
+  width: 10%;
+}
+
+.live-feed .post-content {
+  width: 60%;
+}
+
+.live-feed .post-img {
+  width: 20%;
+}
+
+.live-feed .group > * {
+  float: left;
+}
+
+.right-articles {
+  float: left;
+  width: 50%;
+  padding-left: 10px;
+  border-left: 1px solid rgba(150, 150, 150, 0.3);
+}
+
+.sections-search {
+  float: left;
+}
+
+.sub-login {
+  float: right;
+}
+
+header li {
+  display: inline-block;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.focus-articles .first-article,
+.news-categories {
+  border-bottom: 1px solid rgba(150, 150, 150, 0.3);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.language-select {
+  border-bottom: 1px solid rgba(150, 150, 150, 0.3);
+}
+
+.language-select ol {
+  border-top: 1px solid rgba(150, 150, 150, 0.3);
+  border-left: 1px solid rgba(150, 150, 150, 0.3);
+  border-right: 1px solid rgba(150, 150, 150, 0.3);
+  width: 25%;
+  margin: 0 auto;
+}
+
+.language-select li,
+.news-categories li {
+  margin-left: 10px;
+}
+
+
+.opinion-articles {
+  padding-bottom: 10px;
+  border-bottom: 3px double rgba(150, 150, 150, 0.3);
+}
+
+.title-header {
+  border-bottom: 3px solid rgba(150, 150, 150, 1);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.title-header li + li{
+  margin-left: 20px;
+  border-left: 1px solid rgba(150, 150, 150, 0.3);
+  padding-left: 20px;
+}
+
+
+
+
+@media (max-width: 1110px) {
+  aside {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(150, 150, 150, 0.3);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  .language-select ol{
+    width: 40%;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .readable-width {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 775px) {
+  .news-categories,
+  .title-header ul {
+    display: none;
+  }
+
+  .focus-articles,
+  .article-highlights,
+  .left-articles,
+  .right-articles {
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(150, 150, 150, 0.3);
+    margin-top: 1rem;
+    border-left: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .search-top,
+  .sub-login,
+  .language-select {
+    display: none;
+  }
+
+  .sections-search {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+  }
+}
